@@ -10,7 +10,21 @@ export default function Movies() {
   return (
     <div>
       <h1>Movies</h1>
-      <ul>{movies && movies.map((m, i) => <ListItem key={i} {...m} />)}</ul>
+      {movies.map((m, i) => {
+        const { title, year, category, rating, isBookmarked, thumbnail } = m;
+        return (
+          <ListItem
+            key={i}
+            title={title}
+            year={year}
+            category={category}
+            rating={rating}
+            isBookmarked={isBookmarked}
+            isTrending={false}
+            image={thumbnail.regular.large}
+          />
+        );
+      })}
     </div>
   );
 }

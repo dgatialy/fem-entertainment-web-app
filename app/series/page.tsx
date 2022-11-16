@@ -10,7 +10,21 @@ export default function Series() {
   return (
     <div>
       <h1>Series</h1>
-      <ul>{series && series.map((s, i) => <ListItem key={i} {...s} />)}</ul>
+      {series.map((s, i) => {
+        const { title, year, category, rating, isBookmarked, thumbnail } = s;
+        return (
+          <ListItem
+            key={i}
+            title={title}
+            year={year}
+            category={category}
+            rating={rating}
+            isBookmarked={isBookmarked}
+            isTrending={false}
+            image={thumbnail.regular.large}
+          />
+        );
+      })}
     </div>
   );
 }
