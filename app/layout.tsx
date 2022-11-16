@@ -16,7 +16,7 @@ export default function RootLayout({
 
       <body>
         <nav>
-          <Link href="/series">Series</Link> |
+          <Link href="/">Dashboard</Link> |<Link href="/series">Series</Link> |
           <Link href="/movies">Movies</Link> |
           <Link href="/bookmarks">Bookmarks</Link>
         </nav>
