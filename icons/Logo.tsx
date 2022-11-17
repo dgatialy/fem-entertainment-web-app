@@ -10,7 +10,7 @@ export default function Logo({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className={`w-6 h-6 fill-red ${className ? className : ""}`}
+      className={`w-4 h-4 lg:w-5 lg:h-5 ${className ? className : ""}`}
     >
       <path
         fillRule="evenodd"
