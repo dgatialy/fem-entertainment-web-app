@@ -29,10 +29,7 @@ a {
   scrollbar-width: none;
 }
 
-.slider {
-  /*grid-auto-columns: minmax(38vw, 1fr);*/
-}
-
+/* body & media-query workaround for tailwind lacking grid-template-areas support? */
 body {
   display: grid;
   grid-template-areas:
