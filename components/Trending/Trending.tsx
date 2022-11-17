@@ -10,7 +10,7 @@ export default function Trending() {
   return (
     <div>
       <h2 className="pb-8">Trending</h2>
-      <div className="grid grid-flow-col auto-col-sc gap-10 overflow-x-scroll scrollbar-hide snap-mandatory snap-x">
+      <div className="grid grid-flow-col pr-4 md:pr-7 lg:pr-9 gap-5 lg:gap-9 overflow-x-scroll scrollbar-hide snap-mandatory snap-x [grid-auto-columns:minmax(60vw,1fr)] md:[grid-auto-columns:minmax(57vw,1fr)] lg:[grid-auto-columns:minmax(32vw,1fr)]">
         {trending.map((t, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = t;
           return (

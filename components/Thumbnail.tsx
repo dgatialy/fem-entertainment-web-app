@@ -10,6 +10,7 @@ type Props = {
   title: string;
   isBookmarked: boolean;
   image: string;
+  isTrending?: boolean;
   className?: string;
 };
 
@@ -17,6 +18,7 @@ export default function Thumbnail({
   isBookmarked,
   image,
   title,
+  isTrending,
   className,
 }: Props & React.HTMLAttributes<HTMLDivElement>) {
   const [, toggleBookmark] = useAtom(toggleBookmarkAtom);
@@ -38,7 +40,9 @@ export default function Thumbnail({
         width={500}
         height={500}
         alt="Picture of the author"
-        className="group-hover/thumb:brightness-50 rounded-lg aspect-[140/87]"
+        className={`group-hover/thumb:brightness-50 rounded-lg ${
+          isTrending ? "aspect-[16/9]" : "aspect-[140/87]"
+        } w-full`}
       />
       <Bookmark
         isBookmarked={isBookmarked}
