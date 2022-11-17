@@ -13,7 +13,7 @@ export default function Bookmarks() {
       {movies.length > 0 && (
         <div className="pr-4 md:pr-7 lg:pr-9">
           <h1 className="pb-8">Bookmarked Movies</h1>
-          <div className="grid grid-cols-2 gap-x-10 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 lg:gap-9 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
             {movies.map((r, i) => {
               const { title, year, category, rating, isBookmarked, thumbnail } =
                 r;
@@ -37,7 +37,7 @@ export default function Bookmarks() {
       {series.length > 0 && (
         <div className="pr-4 md:pr-7 lg:pr-9">
           <h1 className="pb-8">Bookmarked Series</h1>
-          <div className="grid grid-cols-2 gap-x-10 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-5 lg:gap-9 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
             {series.map((r, i) => {
               const { title, year, category, rating, isBookmarked, thumbnail } =
                 r;
