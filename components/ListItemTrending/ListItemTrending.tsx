@@ -1,4 +1,5 @@
 "use client";
+
 import Thumbnail from "../Thumbnail";
 import { Series, Movies } from "../../icons";
 
@@ -13,7 +14,7 @@ type Props = {
   className?: string;
 };
 
-export default function ListItem({
+export default function ListItemTrending({
   title,
   year,
   category,
@@ -25,6 +26,7 @@ export default function ListItem({
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
       <Thumbnail image={image} isBookmarked={isBookmarked} title={title} />
+
       <div className="flex gap-2 text-sm leading-tight font-light opacity-75">
         <span className="flex gap-2 after:content-['·']">{year}</span>
         <span className="flex gap-2 after:content-['·']">

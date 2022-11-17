@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import './globals.css';
+import Navigation from "../components/Navigation";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -14,13 +14,11 @@ export default function RootLayout({
       */}
       <head />
 
-      <body>
-        <nav>
-          <Link href="/">Dashboard</Link> |<Link href="/series">Series</Link> |
-          <Link href="/movies">Movies</Link> |
-          <Link href="/bookmarks">Bookmarks</Link>
-        </nav>
-        {children}
+      <body className="bg-dark-blue text-pure-white">
+        <Navigation />
+        <main className="py-6 pl-4 md:pl-7 md:pt-0 lg:pl-9 lg:py-6 max-w-screen-2xl [grid-area:content]">
+          {children}
+        </main>
       </body>
     </html>
   );

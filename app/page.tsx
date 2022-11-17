@@ -1,18 +1,13 @@
-import Image from 'next/image';
-import styles from './page.module.css';
-import Trending from '../components/Trending/Trending';
-import Recomendations from '../components/Recommendations/Recomendations';
-
+import Image from "next/image";
+import styles from "./page.module.css";
+import Trending from "../components/Trending/Trending";
+import Recomendations from "../components/Recommendations/Recomendations";
+//<div className='grid grid-col-1 gap-10'>
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-
+    <div className="space-y-10">
       <Trending />
       <Recomendations />
-
-
-      </main>
     </div>
   );
 }

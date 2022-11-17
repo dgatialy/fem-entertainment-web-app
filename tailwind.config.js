@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
@@ -6,7 +7,19 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#5c6ac4",
+        secondary: "#ecc94b",
+        red: "#FC4747",
+        "dark-blue": "#10141E",
+        "greyish-blue": "#5A698F",
+        "semi-dark-blue": "#161D2F",
+        "pure-white": "#FFFFFF",
+      },
+      fontFamily: {
+        sans: ['"Outfit"', "sans-serif"],
+      },
+    },
   },
-  plugins: [],
-}
+};
