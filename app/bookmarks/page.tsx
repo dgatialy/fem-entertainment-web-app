@@ -3,6 +3,8 @@
 import { bookmarkedMoviesAtom, bookmarkedSeriesAtom } from "../../utils/store";
 import { useAtom } from "jotai";
 import ListItem from "../../components/ListItem/ListItem";
+import GridLayout from "../../layouts/GridLayout";
+import ContentLayout from "../../layouts/ContentLayout";
 
 export default function Bookmarks() {
   const [series] = useAtom(bookmarkedSeriesAtom);
@@ -11,9 +13,9 @@ export default function Bookmarks() {
   return (
     <div className="space-y-10">
       {movies.length > 0 && (
-        <div className="pr-4 md:pr-7 lg:pr-9">
+        <ContentLayout>
           <h1 className="pb-8">Bookmarked Movies</h1>
-          <div className="grid grid-cols-2 gap-5 lg:gap-9 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+          <GridLayout>
             {movies.map((r, i) => {
               const { title, year, category, rating, isBookmarked, thumbnail } =
                 r;
@@ -30,14 +32,14 @@ export default function Bookmarks() {
                 />
               );
             })}
-          </div>
-        </div>
+          </GridLayout>
+        </ContentLayout>
       )}
 
       {series.length > 0 && (
-        <div className="pr-4 md:pr-7 lg:pr-9">
+        <ContentLayout>
           <h1 className="pb-8">Bookmarked Series</h1>
-          <div className="grid grid-cols-2 gap-5 lg:gap-9 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+          <GridLayout>
             {series.map((r, i) => {
               const { title, year, category, rating, isBookmarked, thumbnail } =
                 r;
@@ -54,8 +56,8 @@ export default function Bookmarks() {
                 />
               );
             })}
-          </div>
-        </div>
+          </GridLayout>
+        </ContentLayout>
       )}
     </div>
   );

@@ -3,14 +3,16 @@
 import { moviesAtom } from "../../utils/store";
 import { useAtom } from "jotai";
 import ListItem from "../../components/ListItem/ListItem";
+import GridLayout from "../../layouts/GridLayout";
+import ContentLayout from "../../layouts/ContentLayout";
 
 export default function Movies() {
   const [movies] = useAtom(moviesAtom);
 
   return (
-    <div className="pr-4 md:pr-7 lg:pr-9">
+    <ContentLayout>
       <h1 className="pb-8">Movies</h1>
-      <div className="grid grid-cols-2 gap-5 lg:gap-9 gap-y-8 md:grid-cols-3 lg:grid-cols-4">
+      <GridLayout>
         {movies.map((m, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = m;
           return (
@@ -26,7 +28,7 @@ export default function Movies() {
             />
           );
         })}
-      </div>
-    </div>
+      </GridLayout>
+    </ContentLayout>
   );
 }
