@@ -25,7 +25,7 @@ export default function Thumbnail({
 
   const PlayButton = () => {
     return (
-      <div className="hidden group-hover/thumb:flex gap-4 rounded-full justify-center items-center  bg-pure-white/25 z-20 py-2 px-2 absolute ">
+      <div className="hidden group-hover/card:flex gap-4 rounded-full justify-center items-center  bg-pure-white/25 z-20 py-2 px-2 absolute ">
         <PlayIcon className={"w-8 h-8"} />
         <span className="text-lg leading-tight font-medium pr-3">Play</span>
       </div>
@@ -33,14 +33,16 @@ export default function Thumbnail({
   };
 
   return (
-    <div className="group/thumb cursor-pointer relative flex items-center justify-center">
+    <div
+      className={`cursor-pointer relative flex items-center justify-center ${className}`}
+    >
       <PlayButton />
       <Image
         src={image}
         width={500}
         height={500}
         alt="Picture of the author"
-        className={`group-hover/thumb:brightness-50 rounded-lg ${
+        className={`group-hover/card:brightness-50 rounded-lg ${
           isTrending ? "aspect-[16/9]" : "aspect-[140/87]"
         } w-full`}
       />

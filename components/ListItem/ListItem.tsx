@@ -24,7 +24,12 @@ export default function ListItem({
 }: Props & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
-      <Thumbnail image={image} isBookmarked={isBookmarked} title={title} />
+      <Thumbnail
+        image={image}
+        isBookmarked={isBookmarked}
+        title={title}
+        className={"group/card"}
+      />
       <div className="flex gap-2 text-sm leading-tight font-light opacity-75">
         <span className="flex gap-2 after:content-['·']">{year}</span>
         <span className="flex gap-2 after:content-['·']">
