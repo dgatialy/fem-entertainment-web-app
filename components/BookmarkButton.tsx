@@ -15,7 +15,7 @@ export default function BookmarkButton({
 }: Props & React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
-      className={`group/bookmark rounded-full top-4 right-4 bg-dark-blue/50 p-2.5 hover:bg-pure-white cursor-pointer ${className}`}
+      className={`group/bookmark rounded-full top-2 right-2 sm:top-4 sm:right-4 bg-dark-blue/50 p-2 sm:p-2.5 hover:bg-pure-white cursor-pointer ${className}`}
       onClick={onClick}
     >
       {isBookmarked ? (

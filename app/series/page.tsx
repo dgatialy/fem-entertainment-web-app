@@ -4,14 +4,14 @@ import { seriesAtom } from "../../utils/store";
 import { useAtom } from "jotai";
 import ListItem from "../../components/ListItem/ListItem";
 import GridLayout from "../../layouts/GridLayout";
-import ContentLayout from "../../layouts/ContentLayout";
+import ContainerLayout from "../../layouts/ContainerLayout";
 
 export default function Series() {
   const [series] = useAtom(seriesAtom);
 
   return (
-    <ContentLayout>
-      <h1 className="pb-8">Series</h1>
+    <ContainerLayout>
+      <h1>Series</h1>
       <GridLayout>
         {series.map((s, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = s;
@@ -29,6 +29,6 @@ export default function Series() {
           );
         })}
       </GridLayout>
-    </ContentLayout>
+    </ContainerLayout>
   );
 }
