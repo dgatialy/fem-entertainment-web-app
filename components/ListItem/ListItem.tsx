@@ -23,7 +23,7 @@ export default function ListItem({
   className,
 }: Props & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={`flex flex-col gap-1.5 ${className}`}>
+    <div className={`flex flex-col gap-1.5 ${className ? className : ''}`}>
       <Thumbnail
         image={image}
         isBookmarked={isBookmarked}
