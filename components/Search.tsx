@@ -93,7 +93,7 @@ export default function Search() {
                 <h2>Movies</h2>
                 <GridLayout>
                   {movies.map((r, i) => (
-                    <Media
+                    <Card
                       key={i}
                       title={r.title}
                       year={r.year}
@@ -112,7 +112,7 @@ export default function Search() {
                 <h2>TV Series</h2>
                 <GridLayout>
                   {series.map((r, i) => (
-                    <Media
+                    <Card
                       key={i}
                       title={r.title}
                       year={r.year}
