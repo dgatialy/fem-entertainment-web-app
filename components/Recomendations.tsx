@@ -1,10 +1,10 @@
 "use client";
 
-import { recommendationsAtom } from "../../utils/store";
+import { recommendationsAtom } from "../utils/store";
 import { useAtom } from "jotai";
-import ListItem from "../ListItem/ListItem";
-import GridLayout from "../../layouts/GridLayout";
-import ContainerLayout from "../../layouts/ContainerLayout";
+import Card from "./Card";
+import GridLayout from "../layouts/GridLayout";
+import ContainerLayout from "../layouts/ContainerLayout";
 
 export default function Recomendations() {
   const [reco] = useAtom(recommendationsAtom);
@@ -16,7 +16,7 @@ export default function Recomendations() {
         {reco.map((r, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = r;
           return (
-            <ListItem
+            <Card
               key={i}
               title={title}
               year={year}

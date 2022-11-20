@@ -2,7 +2,7 @@
 
 import { seriesAtom } from "../../utils/store";
 import { useAtom } from "jotai";
-import ListItem from "../../components/ListItem/ListItem";
+import Card from "../../components/Card";
 import GridLayout from "../../layouts/GridLayout";
 import ContainerLayout from "../../layouts/ContainerLayout";
 
@@ -16,7 +16,7 @@ function Series() {
         {series.map((s, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = s;
           return (
-            <ListItem
+            <Card
               key={i}
               title={title}
               year={year}

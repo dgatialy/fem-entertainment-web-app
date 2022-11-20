@@ -6,7 +6,7 @@ import type { Media } from "../utils/store";
 import { useState } from "react";
 import ContainerLayout from "../layouts/ContainerLayout";
 import GridLayout from "../layouts/GridLayout";
-import ListItem from "./ListItem/ListItem";
+import Card from "./Card";
 import { useEffect } from "react";
 import { Search as SearchIcon } from "../icons";
 
@@ -93,7 +93,7 @@ export default function Search() {
                 <h2>Movies</h2>
                 <GridLayout>
                   {movies.map((r, i) => (
-                    <ListItem
+                    <Media
                       key={i}
                       title={r.title}
                       year={r.year}
@@ -112,7 +112,7 @@ export default function Search() {
                 <h2>TV Series</h2>
                 <GridLayout>
                   {series.map((r, i) => (
-                    <ListItem
+                    <Media
                       key={i}
                       title={r.title}
                       year={r.year}

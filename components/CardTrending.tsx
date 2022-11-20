@@ -1,7 +1,7 @@
 "use client";
 
-import Thumbnail from "../Thumbnail";
-import { Series, Movies } from "../../icons";
+import Thumbnail from "./Thumbnail";
+import { Series, Movies } from "../icons";
 
 type Props = {
   title: string;
@@ -14,7 +14,7 @@ type Props = {
   className?: string;
 };
 
-export default function ListItemTrending({
+export default function CardTrending({
   title,
   year,
   category,

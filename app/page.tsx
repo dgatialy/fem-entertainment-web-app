@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Trending from "../components/Trending/Trending";
-import Recomendations from "../components/Recommendations/Recomendations";
+import Trending from "../components/Trending";
+import Recomendations from "../components/Recomendations";
 
 function Home() {
   return (

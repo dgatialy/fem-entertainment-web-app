@@ -1,8 +1,8 @@
 "use client";
 
-import { trendingAtom } from "../../utils/store";
+import { trendingAtom } from "../utils/store";
 import { useAtom } from "jotai";
-import ListItemTrending from "../ListItemTrending/ListItemTrending";
+import CardTrending from "./CardTrending";
 
 export default function Trending() {
   const [trending] = useAtom(trendingAtom);
@@ -14,7 +14,7 @@ export default function Trending() {
         {trending.map((t, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = t;
           return (
-            <ListItemTrending
+            <CardTrending
               key={i}
               title={title}
               year={year}

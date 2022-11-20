@@ -2,7 +2,7 @@
 
 import { moviesAtom } from "../../utils/store";
 import { useAtom } from "jotai";
-import ListItem from "../../components/ListItem/ListItem";
+import Card from "../../components/Card";
 import GridLayout from "../../layouts/GridLayout";
 import ContainerLayout from "../../layouts/ContainerLayout";
 
@@ -16,7 +16,7 @@ function Movies() {
         {movies.map((m, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = m;
           return (
-            <ListItem
+            <Card
               key={i}
               title={title}
               year={year}

@@ -1,6 +1,6 @@
 "use client";
-import Thumbnail from "../Thumbnail";
-import { Series, Movies } from "../../icons";
+import Thumbnail from "./Thumbnail";
+import { Series, Movies } from "../icons";
 
 type Props = {
   title: string;
@@ -13,7 +13,7 @@ type Props = {
   className?: string;
 };
 
-export default function ListItem({
+export default function Card({
   title,
   year,
   category,
