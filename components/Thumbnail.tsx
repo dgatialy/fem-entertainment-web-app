@@ -50,7 +50,7 @@ export default function Thumbnail({
       />
       <Bookmark
         isBookmarked={isBookmarked}
-        className="absolute z-50"
+        className="absolute z-20"
         onClick={() => toggleBookmark(title)}
       />
     </div>
