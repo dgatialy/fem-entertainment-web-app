@@ -27,7 +27,7 @@ export const searchAtom = atom(false);
 export const mediaAtom = atom<Media[]>(data);
 
 // All Trending Movies & TV Series
-export const trendinAtom = atom((get) =>
+export const trendingAtom = atom((get) =>
   get(mediaAtom).filter((m) => m.isTrending)
 );
 

@@ -1,11 +1,11 @@
 "use client";
 
-import { trendinAtom } from "../../utils/store";
+import { trendingAtom } from "../../utils/store";
 import { useAtom } from "jotai";
 import ListItemTrending from "../ListItemTrending/ListItemTrending";
 
 export default function Trending() {
-  const [trending] = useAtom(trendinAtom);
+  const [trending] = useAtom(trendingAtom);
 
   return (
     <div>
