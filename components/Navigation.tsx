@@ -5,9 +5,12 @@ import { usePathname } from "next/navigation";
 
 import Image from "next/image";
 import { Home, Movies, Series, BookmarkNavigation, Logo } from "../icons";
+import { bookmarksAtom } from "../utils/store";
+import { useAtomValue } from "jotai";
 
 export default function Navigation() {
   const pathname = usePathname();
+  const bookmarksCount = useAtomValue(bookmarksAtom).length;
 
   const classNames = (path: string) =>
     `w-4 h-4 sm:w-5 sm:h-5 hover:fill-red ${
@@ -29,10 +32,29 @@ export default function Navigation() {
             <Movies className={classNames("/movies")} />
           </Link>
           <Link href="/bookmarks">
-            <BookmarkNavigation className={classNames("/bookmarks")} />
+            <div className="relative">
+              <BookmarkNavigation className={classNames("/bookmarks")} />
+              {bookmarksCount > 0 && (
+                <div
+                  className={`absolute text-xs font-light bg-red rounded-full p-0.5 h-5 text-center scale-75 top-0 -translate-y-2/4 ${
+                    bookmarksCount < 100
+                      ? "w-5 translate-x-1/4 sm:translate-x-2/4"
+                      : "w-7 translate-x-1/4"
+                  }`}
+                >
+                  {bookmarksCount}
+                </div>
+              )}
+            </div>
           </Link>
         </div>
-        <Image src={"/image-avatar.png"} width={32} height={32} className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-pure-white border rounded-full" alt="Avatar" />
+        <Image
+          src={"/image-avatar.png"}
+          width={32}
+          height={32}
+          className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 border-pure-white border rounded-full"
+          alt="Avatar"
+        />
       </nav>
     </div>
   );
