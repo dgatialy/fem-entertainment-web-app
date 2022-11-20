@@ -6,7 +6,7 @@ import ListItem from "../../components/ListItem/ListItem";
 import GridLayout from "../../layouts/GridLayout";
 import ContainerLayout from "../../layouts/ContainerLayout";
 
-export default function Series() {
+function Series() {
   const [series] = useAtom(seriesAtom);
 
   return (
@@ -32,3 +32,5 @@ export default function Series() {
     </ContainerLayout>
   );
 }
+
+export default Series;

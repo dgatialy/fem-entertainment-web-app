@@ -6,7 +6,7 @@ import ListItem from "../../components/ListItem/ListItem";
 import GridLayout from "../../layouts/GridLayout";
 import ContainerLayout from "../../layouts/ContainerLayout";
 
-export default function Movies() {
+function Movies() {
   const [movies] = useAtom(moviesAtom);
 
   return (
@@ -32,3 +32,5 @@ export default function Movies() {
     </ContainerLayout>
   );
 }
+
+export default Movies;

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { bookmarkedMoviesAtom, bookmarkedSeriesAtom } from '../../utils/store';
-import { useAtom } from 'jotai';
-import ListItem from '../../components/ListItem/ListItem';
-import GridLayout from '../../layouts/GridLayout';
-import ContainerLayout from '../../layouts/ContainerLayout';
+import { bookmarkedMoviesAtom, bookmarkedSeriesAtom } from "../../utils/store";
+import { useAtom } from "jotai";
+import ListItem from "../../components/ListItem/ListItem";
+import GridLayout from "../../layouts/GridLayout";
+import ContainerLayout from "../../layouts/ContainerLayout";
 
-export default function Bookmarks() {
+function Bookmarks() {
   const [series] = useAtom(bookmarkedSeriesAtom);
   const [movies] = useAtom(bookmarkedMoviesAtom);
 
@@ -69,3 +69,5 @@ export default function Bookmarks() {
     </div>
   );
 }
+
+export default Bookmarks;
