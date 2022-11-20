@@ -53,8 +53,8 @@ export default function Card({
 
   return (
     <>
-      {isTrending && <CardLayout {...cardProps} />}
-      {!isTrending && <CardTrendingLayout {...cardProps} />}
+      {!isTrending && <CardLayout {...cardProps} />}
+      {isTrending && <CardTrendingLayout {...cardProps} />}
     </>
   );
 }
