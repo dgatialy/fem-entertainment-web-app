@@ -13,7 +13,7 @@ export default function Navigation() {
   const bookmarksCount = useAtomValue(bookmarksAtom).length;
 
   const classNames = (path: string) =>
-    `w-4 h-4 sm:w-5 sm:h-5 hover:fill-red ${
+    `w-4 h-4 sm:w-5 sm:h-5 hover:fill-red transition-colors ${
       pathname === path ? "fill-white" : "fill-greyish-blue"
     }`;
 
