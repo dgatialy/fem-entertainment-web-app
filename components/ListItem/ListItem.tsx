@@ -36,9 +36,9 @@ export default function ListItem({
           <span className="flex gap-2 after:content-['·']">
             <span className="flex gap-1.5 items-center">
               {category === "Movie" ? (
-                <Movies className={"w-3.5 h-3.5"} />
+                <Movies className={"w-3 h-3"} />
               ) : (
-                <Series className={"w-3.5 h-3.5"} />
+                <Series className={"w-3 h-3"} />
               )}
               {category}
             </span>
