@@ -34,19 +34,22 @@ export default function Search() {
       setMovies(res.filter((r) => r.category === "Movie"));
       setSeries(res.filter((r) => r.category === "TV Series"));
     }
-  }, [query, data]);
+  }, [query, data, setSearch]);
 
   const pathname = usePathname();
 
-  // Clear/reset search on page navigation.
+  // Clear/reset search on page navigation or Escape-Key.
   useEffect(() => {
     if (search) return;
     setMovies([]);
     setSeries([]);
     setResultsCount(0);
     setQuery("");
+  }, [search]);
+
+  useEffect(() => {
     setSearch(false);
-  }, [pathname, search]);
+  }, [pathname]);
 
   useEffect(() => {
     const keyDownHandler = (event: globalThis.KeyboardEvent) => {
@@ -61,7 +64,7 @@ export default function Search() {
     return () => {
       document.removeEventListener("keydown", keyDownHandler);
     };
-  }, [search]);
+  }, [search, setSearch]);
 
   return (
     <ContainerLayout>
@@ -80,8 +83,9 @@ export default function Search() {
       {resultsCount > 0 && query.length > 0 && (
         <div className="absolute bg-dark-blue z-50 pr-4 sm:pr-6 lg:pr-9">
           <h1 className="text-greyish-blue pb-2">
-            Found {resultsCount} {resultsCount < 2 ? "result" : "results"} for '
-            {query}'
+            Found {resultsCount} {resultsCount < 2 ? "result" : "results"} for
+            &apos;
+            {query}&apos;
           </h1>
           <div className="space-y-10">
             {movies.length > 0 && (
@@ -126,7 +130,7 @@ export default function Search() {
         </div>
       )}
       {resultsCount === 0 && query.length > 0 && (
-        <h1>No results for '{query}'</h1>
+        <h1>No results for &apos;{query}&apos;</h1>
       )}
     </ContainerLayout>
   );
