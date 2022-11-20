@@ -71,7 +71,7 @@ export default function Search() {
       <div className="flex gap-4 lg:pt-7 mb-5 sm:mb-7 lg:mb-8">
         <SearchIcon className="w-5 h-5 sm:w-7 sm:h-7 sm:mt-1" />
         <input
-          className="w-full pb-3 lg:pb-3.5 bg-transparent text-base leading-5 sm:text-2xl font-light placeholder:color-pure-white/50 focus:outline-none focus:border-b focus:border-greyish-blue"
+          className="w-full pb-3 lg:pb-3.5 bg-transparent text-base leading-5 sm:text-2xl font-light placeholder:color-priamary/50 focus:outline-none focus:border-b focus:border-on-surface"
           type="search"
           id="mySearch"
           onChange={onChangeHandler}
@@ -81,8 +81,8 @@ export default function Search() {
         />
       </div>
       {resultsCount > 0 && query.length > 0 && (
-        <div className="absolute bg-dark-blue z-40 pr-4 sm:pr-6 lg:pr-9">
-          <h1 className="text-greyish-blue pb-2">
+        <div className="absolute bg-default z-40 pr-4 sm:pr-6 lg:pr-9">
+          <h1 className="text-on-surface pb-2">
             Found {resultsCount} {resultsCount < 2 ? "result" : "results"} for
             &apos;
             {query}&apos;

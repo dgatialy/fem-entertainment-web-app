@@ -11,16 +11,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#5c6ac4",
-        secondary: "#ecc94b",
-        red: "#FC4747",
-        "dark-blue": "#10141E",
-        "greyish-blue": "#5A698F",
-        "semi-dark-blue": "#161D2F",
-        "pure-white": "#FFFFFF",
+        accent: "#FC4747",
+        "on-background": "#ffffff",
+        "on-surface": "#5A698F",
       },
       fontFamily: {
         sans: ['"Outfit"', "sans-serif"],
+      },
+      backgroundColor: {
+        default: "#10141E",
+        surface: "#161D2F",        
       },
     },
   },

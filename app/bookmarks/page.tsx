@@ -13,7 +13,7 @@ function Bookmarks() {
   return (
     <div className="space-y-10">
       {movies.length < 1 && series.length < 1 && (
-        <span className="text-greyish-blue">
+        <span className="text-on-surface">
           <h1>No bookmarks.</h1>
           <p>Bookmark movies and TV Series and they will appear here.</p>
         </span>
