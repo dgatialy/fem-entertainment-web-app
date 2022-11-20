@@ -1,8 +1,10 @@
 "use client";
 import Thumbnail from "./Thumbnail";
 import { Series, Movies } from "../icons";
+import CardLayout from "../layouts/CardLayout";
+import CardTrendingLayout from "../layouts/CardTrendingLayout";
 
-type Props = {
+type cardProps = {
   title: string;
   year: number;
   category: string;
@@ -20,35 +22,39 @@ export default function Card({
   rating,
   isBookmarked,
   image,
+  isTrending,
   className,
-}: Props & React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div className={`flex flex-col gap-2 ${className ? className : ""}`}>
+}: cardProps & React.HTMLAttributes<HTMLDivElement>) {
+  const cardProps = {
+    thumbnail: (
       <Thumbnail
         image={image}
         isBookmarked={isBookmarked}
         title={title}
         className={"group/card"}
+        isTrending={isTrending}
       />
-      <div className="flex flex-col gap-1">
-        <div className="flex gap-2 text-xs sm:text-sm leading-tight font-light opacity-75">
-          <span className="flex gap-2 after:content-['·']">{year}</span>
-          <span className="flex gap-2 after:content-['·']">
-            <span className="flex gap-1.5 items-center">
-              {category === "Movie" ? (
-                <Movies className={"w-3 h-3"} />
-              ) : (
-                <Series className={"w-3 h-3"} />
-              )}
-              {category}
-            </span>
-          </span>
-          <span>{rating}</span>
-        </div>
-        <div className="font-medium text-sm sm:text-lg leading-tight">
-          {title}
-        </div>
-      </div>
-    </div>
+    ),
+    category: (
+      <>
+        {category === "Movie" ? (
+          <Movies className={"w-3 h-3"} />
+        ) : (
+          <Series className={"w-3 h-3"} />
+        )}
+        {category}
+      </>
+    ),
+    year: year,
+    rating: rating,
+    title: title,
+    className: className,
+  };
+
+  return (
+    <>
+      {isTrending && <CardLayout {...cardProps} />}
+      {!isTrending && <CardTrendingLayout {...cardProps} />}
+    </>
   );
 }
