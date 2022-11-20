@@ -81,7 +81,7 @@ export default function Search() {
         />
       </div>
       {resultsCount > 0 && query.length > 0 && (
-        <div className="absolute bg-dark-blue z-50 pr-4 sm:pr-6 lg:pr-9">
+        <div className="absolute bg-dark-blue z-40 pr-4 sm:pr-6 lg:pr-9">
           <h1 className="text-greyish-blue pb-2">
             Found {resultsCount} {resultsCount < 2 ? "result" : "results"} for
             &apos;

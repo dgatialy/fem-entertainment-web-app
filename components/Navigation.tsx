@@ -18,7 +18,7 @@ export default function Navigation() {
     }`;
 
   return (
-    <div className="[grid-area:navigation] md:px-6 md:py-6 lg:pr-0">
+    <div className="[grid-area:navigation] md:px-6 md:py-6 lg:pr-0 fixed w-full lg:w-fit lg:relative z-50">
       <nav className="bg-semi-dark-blue p-4 md:py-4 md:px-4 lg:px-7 lg:py-8 items-center md:rounded-xl flex lg:flex-col lg:h-[calc(100vh_-_theme(spacing.11))] lg:gap-16 justify-between sticky top-6">
         <Logo />
         <div className="flex gap-6 sm:gap-8 lg:gap-10 lg:flex-col lg:h-full">

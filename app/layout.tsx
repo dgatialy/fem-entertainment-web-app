@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className="bg-dark-blue text-pure-white">
         <Navigation />
 
-        <main className="py-6 pl-4 sm:pl-6 lg:pl-9 md:pt-0 lg:py-6 [grid-area:content] w-screen lg:w-full">
+        <main className="py-6 pl-4 md:pl-6 lg:pl-9 md:pt-0 lg:py-6 [grid-area:content] w-screen lg:w-full mt-14 sm:mt-20 md:mt-32 lg:mt-0">
           <Search />
           <div className={`${search ? "hidden" : ""}`}>{children}</div>
         </main>
