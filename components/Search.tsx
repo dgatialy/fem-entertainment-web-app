@@ -49,7 +49,7 @@ export default function Search() {
 
   useEffect(() => {
     setSearch(false);
-  }, [pathname]);
+  }, [pathname, setSearch]);
 
   useEffect(() => {
     const keyDownHandler = (event: globalThis.KeyboardEvent) => {
