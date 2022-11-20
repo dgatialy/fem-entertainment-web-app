@@ -5,3 +5,4 @@ export { default as BookmarkSolid } from "./BookmarkSolid";
 export { default as Bookmark } from "./Bookmark";
 export { default as Play } from "./Play";
 export { default as Logo } from "./Logo";
+export { default as Search } from "./Search";

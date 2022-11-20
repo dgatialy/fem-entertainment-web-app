@@ -1,11 +1,16 @@
+"use client";
 import Navigation from "../components/Navigation";
 import "./globals.css";
+import Search from "../components/Search";
+import { searchAtom } from "../utils/store";
+import { useAtom } from "jotai";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [search] = useAtom(searchAtom);
   return (
     <html lang="en">
       {/*
@@ -18,7 +23,8 @@ export default function RootLayout({
         <Navigation />
 
         <main className="py-6 pl-4 sm:pl-6 lg:pl-9 md:pt-0 lg:py-6 [grid-area:content] w-screen lg:w-full">
-          {children}
+          <Search />
+          <div className={`${search ? "hidden" : ""}`}>{children}</div>
         </main>
       </body>
     </html>
