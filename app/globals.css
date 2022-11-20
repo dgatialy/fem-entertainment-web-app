@@ -36,14 +36,14 @@ body {
     "navigation"
     "content";
 
-  grid-template-columns: minmax(200px, max-content);
+  grid-template-columns: minmax(0, max-content);
   grid-template-rows: max-content max-content;
   height: 100vh;
 }
 
 @media (min-width: 1024px) {
   body {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas: "navigation content";    
   }
