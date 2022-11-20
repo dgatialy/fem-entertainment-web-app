@@ -1,5 +1,5 @@
-import { atom } from 'jotai';
-import data from './data.json';
+import { atom } from "jotai";
+import data from "./data.json";
 
 export type Media = {
   title: string;
@@ -21,6 +21,8 @@ export type Media = {
   isTrending: boolean;
 };
 
+export const searchAtom = atom(false);
+
 // All Movies & TV Series
 export const mediaAtom = atom<Media[]>(data);
 
@@ -37,22 +39,27 @@ export const recommendationsAtom = atom((get) =>
 
 // All Movies
 export const moviesAtom = atom((get) =>
-  get(mediaAtom).filter((m) => m.category === 'Movie')
+  get(mediaAtom).filter((m) => m.category === "Movie")
 );
 
 // All TV Series
 export const seriesAtom = atom((get) =>
-  get(mediaAtom).filter((m) => m.category === 'TV Series')
+  get(mediaAtom).filter((m) => m.category === "TV Series")
+);
+
+// All Bookmarked Movies & Series
+export const bookmarksAtom = atom((get) =>
+  get(mediaAtom).filter((m) => m.isBookmarked)
 );
 
 // All Bookmarked Movies
 export const bookmarkedMoviesAtom = atom((get) =>
-  get(moviesAtom).filter((m) => m.isBookmarked)
+  get(bookmarksAtom).filter((m) => m.category === "Movie")
 );
 
 // All Bookmarked TV Series
 export const bookmarkedSeriesAtom = atom((get) =>
-  get(seriesAtom).filter((m) => m.isBookmarked)
+  get(bookmarksAtom).filter((m) => m.category === "TV Series")
 );
 
 // Find Movie & TV Series by title and toggle isBookmarked status
