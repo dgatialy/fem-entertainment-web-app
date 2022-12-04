@@ -22,16 +22,16 @@ export default function Navigation() {
       <nav className="bg-surface p-4 md:py-4 md:px-4 lg:px-7 lg:py-8 items-center md:rounded-xl flex lg:flex-col lg:h-[calc(100vh_-_theme(spacing.11))] lg:gap-16 justify-between sticky top-6">
         <Logo />
         <div className="flex gap-6 sm:gap-8 lg:gap-10 lg:flex-col lg:h-full">
-          <Link href="/">
+          <Link href="/" aria-label="Go to Dashboard">
             <Home className={classNames("/")} />
           </Link>
-          <Link href="/series">
+          <Link href="/series" aria-label="Go to Series">
             <Series className={classNames("/series")} />
           </Link>
-          <Link href="/movies">
+          <Link href="/movies" aria-label="Go to Movies">
             <Movies className={classNames("/movies")} />
           </Link>
-          <Link href="/bookmarks">
+          <Link href="/bookmarks" aria-label="Go to Bookmarks">
             <div className="relative">
               <BookmarkNavigation className={classNames("/bookmarks")} />
               {bookmarksCount > 0 && (

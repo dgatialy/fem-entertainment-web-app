@@ -9,8 +9,8 @@ export default function Trending() {
 
   return (
     <div>
-      <h2>Trending</h2>
-      <div className="grid grid-flow-col pr-4 md:pr-7 lg:pr-9 gap-4 sm:gap-8 lg:gap-10 overflow-x-scroll scrollbar-hide snap-mandatory snap-x [grid-auto-columns:minmax(64vw,1fr)] md:[grid-auto-columns:minmax(57vw,1fr)] lg:[grid-auto-columns:minmax(32vw,1fr)]">
+      <h1>Trending</h1>
+      <div className="grid grid-flow-col pr-4 md:pr-7 lg:pr-9 gap-4 sm:gap-8 lg:gap-10 overflow-x-scroll scrollbar-hide snap-mandatory snap-x [grid-auto-columns:minmax(64vw,1fr)] md:[grid-auto-columns:minmax(57vw,1fr)] lg:[grid-auto-columns:minmax(32vw,1fr)]" tabIndex={0} >
         {trending.map((t, i) => {
           const { title, year, category, rating, isBookmarked, thumbnail } = t;
           return (
