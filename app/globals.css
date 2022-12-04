@@ -45,6 +45,11 @@ body {
   body {
     grid-template-columns: minmax(0, auto) minmax(0, 1fr);
     grid-template-rows: 1fr;
-    grid-template-areas: "navigation content";    
+    grid-template-areas: "navigation content";
   }
+}
+
+input[type="search"] {
+  appearance: none !important;
+  border-radius: 0;
 }
