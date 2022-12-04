@@ -9,6 +9,7 @@ import GridLayout from "../layouts/GridLayout";
 import Card from "./Card";
 import { useEffect } from "react";
 import { Search as SearchIcon } from "../icons";
+import { Close } from "../icons";
 
 export default function Search() {
   const [data] = useAtom(mediaAtom);
@@ -70,15 +71,25 @@ export default function Search() {
     <ContainerLayout>
       <div className="flex gap-4 lg:pt-7 mb-5 sm:mb-7 lg:mb-8">
         <SearchIcon className="w-5 h-5 sm:w-7 sm:h-7 sm:mt-1" />
+
         <input
-          className="w-full pb-3 lg:pb-3.5 bg-transparent text-base leading-5 sm:text-2xl font-light placeholder:color-priamary/50 focus:outline-none focus:border-b focus:border-on-surface"
+          className="appearance-none w-full pb-3 lg:pb-3.5 bg-transparent text-base leading-5 sm:text-2xl font-light placeholder:color-primary/50 focus:outline-none focus:border-b focus:border-on-surface"
           type="search"
-          id="mySearch"
+          id="search"
           onChange={onChangeHandler}
           name="q"
           placeholder="Search for movies and TV Series"
           value={query}
         />
+        <div
+          onClick={(e) => {
+            e.preventDefault();
+            setSearch(false);
+          }}
+          className="absolute right-2 sm:right-7 cursor-pointer"
+        >
+          <Close className={`fill-primary ${search ? "" : "hidden"}`} />
+        </div>
       </div>
       {resultsCount > 0 && query.length > 0 && (
         <div className="absolute bg-default z-40 pr-4 sm:pr-6 lg:pr-9">
