@@ -43,7 +43,7 @@ export default function Thumbnail({
         src={image}
         width={500}
         height={500}
-        alt="Picture of the author"
+        alt={`Cover image of '${title}'`}
         className={`group-hover/card:brightness-50 transition rounded-lg ${
           isTrending ? "aspect-[16/9]" : "aspect-[140/87]"
         } w-full`}
